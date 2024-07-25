@@ -1,0 +1,12 @@
+<div class="container py-4">
+    <h3><img src="./assets/images/pokebola.png" alt="" height="40">&nbsp;POKEMONS</h3><br>
+    <div class="row">
+        <div *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: itemsPerPage, currentPage: page }" class="col-3">
+            <app-card [data]="pokemon">
+            </app-card>
+        </div>
+        <div class="text-center">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
